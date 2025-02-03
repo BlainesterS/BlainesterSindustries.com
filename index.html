@@ -4,30 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlainesterS Industries.com</title>
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/BlainesterS/BlainesterSIndustries.com/main/green.png">
+    <link rel="icon" type="image/png" href="green.png">
+
     <style>
-        body {
-            background-image: url("black_hold_background.png"); /* Fixed filename */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+        /* Background Animation Keyframes */
+        @keyframes spin {
+            0% {transform: rotate(0deg) scale(2.7);}
+            50% {transform: rotate(180deg) scale(3);}
+			100% {transform: rotate(360deg) scale(2.7);}
+        }
+
+        /* Background Container */
+        .background-container {
+            position: fixed;
+            top: -80;
+            left: 0;
+            width: 100vw;
             height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            overflow: hidden;
+            background-color: black; /* Full black background */
+        }
+
+        /* Background Image (Now Animatable) */
+        .background {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100vw; /* Ensures full coverage */
+            height: 100vh;
+            background-image: url("black_hold_background.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            transform-origin: center center;
+            transform: translate(-50%, -50%);
+            animation: spin 6s linear infinite; /* Default Slow Spin Animation */
+        }
+
+        /* Full Black Background for Text */
+        body {
+            background-color: black;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        /* Centered Text Box */
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             color: white;
             text-align: center;
-            font-size: 24px;
+            z-index: 2;
+            background-color: black;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Text Styling */
+        h1, p {
+            display: inline-block;
+            margin: 10px 0;
         }
     </style>
 </head>
 <body>
-    <div>
-        <h1 style="font-family:'SF Retroesque FX', sans-serif; font-variant-caps: all-caps; font-size: 87px;">
-            <strong style="background-color: black">BlainesterS Industries.com</strong>
+    <div class="background-container">
+        <div class="background" id="background"></div> <!-- Background Element -->
+    </div>
+
+    <div class="content">
+        <h1 style="font-family:'SF Retroesque FX'; font-variant-caps: all-caps; font-size: 87px">
+            <strong>BlainesterS Industries.com</strong>
         </h1>
-        <p style="font-family: 'SF Retroesque', sans-serif; font-size: 40px;">
-            <strong style="background-color: black">The Future Is NOW!!</strong>
+        <p style="font-family: 'SF Retroesque'; font-size: 40px">
+            <strong>The Future Is NOW!!</strong>
         </p>
     </div>
 </body>
