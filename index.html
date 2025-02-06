@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlainesterS Industries.com</title>
+    <link rel="icon" type="image/png" href="green.png">
+
+    <style>
+        /* Background Animation Keyframes */
+        @keyframes spin {
+            0% {transform: rotate(0deg) scale(2.3) translate(0%,0%);}
+            50% {transform: rotate(180deg) scale(3.6) translate(2.4%,-6.4%);}
+			100% {transform: rotate(360deg) scale(2.3) translate(0%,0%);}
+        }
+
+        /* Background Container */
+        .background-container {
+            position: fixed;
+            top: -80;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background-color: black; /* Full black background */
+        }
+
+        /* Background Image (Now Animatable) */
+        .background {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100vw; /* Ensures full coverage */
+            height: 100vh;
+            background-image: url("black_hold_background.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            transform-origin: center center;
+            transform: translate(-50%, -50%);
+            animation: spin 6s linear infinite; /* Default Slow Spin Animation */
+        }
+
+        /* Full Black Background for Text */
+        body {
+            background-color: black;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        /* Centered Text Box */
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            z-index: 2;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Text Styling */
+        h1, p {
+            display: inline-block;
+            margin: 2px 10px;
+        }
+    .squish-effect {
+}
+    </style>
+</head>
+<body>
+    <div class="background-container">
+        <div class="background" id="background"></div> <!-- Background Element -->
+    </div>
+
+    <div class="content">
+        <h1 style="font-family:'SF Retroesque FX'; font-variant-caps: all-caps; font-size: 87px">
+            <strong>BlainesterS Industries.com</strong>
+        </h1>
+      <p style="font-family: 'SF Retroesque'; font-size: 40px">
+            <strong>The Future Is NOW!!</strong>
+        </p>
+		<div><a href="learn-more.html"><img src="buton_learn_more.png" width="198" height="100" class="pop-effect" onMouseOver="pop(this)" onMouseOut="resetPop(this)"></a></div>
+
+<script>
+    function pop(element) {
+        element.style.transform = "scale(1.2)";
+    }
+
+    function resetPop(element) {
+        element.style.transform = "scale(1)";
+		element.style.color = "";
+    }
+</script>
+</div>
+</body>
+</html>
